@@ -1,10 +1,10 @@
 import Test.HUnit
 
-next wasAlive = wasAlive || False
+next wasAlive neighbors = wasAlive || False
 
 tests = TestList 
     [
-        TestCase (assertEqual "everything is always dead" (False) (next True) )
+        TestCase (assertEqual "dead cell with no friends stay dead" (False) (next False 0) )
     ]
 
 main = do runTestTT tests
